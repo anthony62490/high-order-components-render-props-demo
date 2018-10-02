@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from './Button';
+import AddName from './AddName';
+import SwapiContainer from './SwapiContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {/* <Button style={{color:'#996699', background:'#BADA55'}}
+        handleClick={() => alert('clicked')}/>
+        <Button/> */}
+        {/* <AddName render={(state) => <h1>{state.name}</h1>}/> */}
+        <SwapiContainer render={state => state.data.map(val => 
+          <div>
+            <p>{val.name} {val.surface_water}</p>
+          </div>)}/>
+
+        
       </div>
     );
   }
