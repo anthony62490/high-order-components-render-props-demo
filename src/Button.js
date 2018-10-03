@@ -9,13 +9,17 @@ const Button = ({style,handleClick, name, text}) => {
   return <button style={style || null} onClick={handleClick}>Click</button>
 };
 
+function test()
+{console.log('test');}
+
 Button.propTypes = {
   style: PropTypes.object,
   handleClick: PropTypes.func
 };
 
 Button.defaultProps = {
-  style: { background: 'red' }
+  style: { background: '#996699' },
+  onClick: test()
 }
 
 export default withSwapi(withText(withName(Button)));
